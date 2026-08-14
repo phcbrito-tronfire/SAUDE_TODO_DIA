@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raiz — saúde, movimento e comida de verdade</title>
+  <meta name="description" content="Portal educativo sobre exercícios físicos, alimentação saudável, receitas, hábitos e ferramentas de acompanhamento da saúde.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== BIBLIOTECA DE FORMAS SVG (folhas usadas como ornamento) ===== -->
+  <svg class="svg-oculto" aria-hidden="true" focusable="false">
+    <symbol id="folha" viewBox="0 0 100 60">
+      <path d="M2 30 C 20 2, 62 -6, 98 8 C 88 46, 46 62, 2 30 Z"/>
+    </symbol>
+    <symbol id="broto" viewBox="0 0 64 64">
+      <path d="M32 60 V 30" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+      <path d="M32 34 C 14 34, 8 22, 8 10 C 24 12, 32 22, 32 34 Z"/>
+      <path d="M32 40 C 50 40, 56 28, 56 18 C 40 20, 32 30, 32 40 Z"/>
+    </symbol>
+    <symbol id="gota" viewBox="0 0 40 52">
+      <path d="M20 2 C 32 20, 38 28, 38 36 A 18 18 0 0 1 2 36 C 2 28, 8 20, 20 2 Z"/>
+    </symbol>
+  </svg>
+
+  <!-- Barra de progresso da leitura -->
+  <div class="progresso" aria-hidden="true"><span id="progressoBarra"></span></div>
+
+  <!-- ====================== CABEÇALHO ====================== -->
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho__interno">
+
+      <a href="#inicio" class="marca">
+        <span class="marca__selo"><svg viewBox="0 0 64 64"><use href="#broto"></use></svg></span>
+        <span class="marca__texto">
+          <strong>Raiz</strong>
+          <small>saúde que começa de baixo</small>
+        </span>
+      </a>
+
+      <button class="menu-botao" id="menuBotao" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu de navegação">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="menu" id="menu" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#inicio" class="menu__link">Início</a></li>
+          <li><a href="#exercicios" class="menu__link">Exercícios</a></li>
+          <li><a href="#alimentacao" class="menu__link">Alimentação</a></li>
+          <li><a href="#receitas" class="menu__link">Receitas</a></li>
+          <li><a href="#habitos" class="menu__link">Hábitos</a></li>
+          <li><a href="#mitos" class="menu__link">Mitos</a></li>
+          <li><a href="#ferramentas" class="menu__link menu__link--destaque">Ferramentas</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ====================== CAPA ====================== -->
+    <section class="capa" id="inicio">
+      <div class="container capa__grade">
+
+        <div class="capa__texto">
+          <p class="olho"><span class="marcador"></span>Guia completo de vida saudável</p>
+          <h1 class="capa__titulo">
+            Um corpo saudável<br>
+            cresce como<br>
+            <em>planta</em>: devagar<br>
+            e todo dia.
+          </h1>
+          <p class="capa__descricao">
+            Movimento, comida de verdade, água, sono e descanso mental. São cinco raízes
+            simples — e nenhuma delas exige dinheiro, academia cara ou dieta da moda.
+            Aqui você encontra o que fazer, por onde começar e como transformar isso em
+            rotina que dura.
+          </p>
+          <div class="capa__acoes">
+            <a href="#exercicios" class="botao botao--solido">Começar pelos exercícios</a>
+            <a href="#ferramentas" class="botao botao--vazado">Usar as ferramentas</a>
+          </div>
+
+          <ul class="capa__pastilhas">
+            <li>9 exercícios guiados</li>
+            <li>4 receitas</li>
+            <li>3 calculadoras</li>
+            <li>Quiz de mitos</li>
+          </ul>
+        </div>
+
+        <!-- Ilustração botânica desenhada em SVG -->
+        <div class="capa__ilustracao">
+          <svg class="planta" viewBox="0 0 340 460" role="img" aria-label="Ilustração de um ramo com folhas">
+            <path class="planta__caule" d="M170 458 C 158 360, 158 270, 170 190 C 177 130, 182 70, 178 14"/>
+            <g class="planta__folhas">
+              <g transform="translate(170 392) rotate(-16)"><use href="#folha" width="128" height="77" y="-38"/></g>
+              <g transform="translate(166 346) rotate(196)"><use href="#folha" width="122" height="73" y="-36"/></g>
+              <g transform="translate(164 296) rotate(-22)"><use href="#folha" width="116" height="70" y="-35"/></g>
+              <g transform="translate(166 246) rotate(202)"><use href="#folha" width="108" height="65" y="-32"/></g>
+              <g transform="translate(171 196) rotate(-26)"><use href="#folha" width="98" height="59" y="-29"/></g>
+              <g transform="translate(174 146) rotate(206)"><use href="#folha" width="88" height="53" y="-26"/></g>
+              <g transform="translate(178 98) rotate(-30)"><use href="#folha" width="74" height="44" y="-22"/></g>
+              <g transform="translate(179 56) rotate(210)"><use href="#folha" width="62" height="37" y="-18"/></g>
+            </g>
+          </svg>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================== NÚMEROS ====================== -->
+    <section class="numeros">
+      <div class="container numeros__grade">
+        <div class="numero">
+          <p class="numero__valor"><span class="contador" data-alvo="150">0</span><small>min</small></p>
+          <p class="numero__rotulo">de atividade moderada por semana é a recomendação da OMS</p>
+        </div>
+        <div class="numero">
+          <p class="numero__valor"><span class="contador" data-alvo="400">0</span><small>g</small></p>
+          <p class="numero__rotulo">de frutas, legumes e verduras por dia</p>
+        </div>
+        <div class="numero">
+          <p class="numero__valor"><span class="contador" data-alvo="30">0</span><small>%</small></p>
+          <p class="numero__rotulo">até esse tanto menor o risco cardiovascular em quem se movimenta</p>
+        </div>
+        <div class="numero">
+          <p class="numero__valor"><span class="contador" data-alvo="8">0</span><small>h</small></p>
+          <p class="numero__rotulo">de sono é o alvo médio para pessoas adultas</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== PILARES ====================== -->
+    <section class="secao" id="pilares">
+      <div class="container">
+        <header class="secao__cabecalho revelar">
+          <p class="olho"><span class="marcador"></span>01 — Fundamentos</p>
+          <h2 class="secao__titulo">As cinco raízes da saúde</h2>
+          <p class="secao__intro">
+            Saúde não é uma coisa só, é um sistema: quando uma raiz enfraquece, as outras
+            sentem. Dormir mal atrapalha o treino, treino ruim atrapalha o humor, humor ruim
+            atrapalha a comida. Cuide das cinco juntas, mesmo que de pouquinho.
+          </p>
+        </header>
+
+        <div class="pilares">
+          <article class="pilar revelar">
+            <span class="pilar__icone"><svg viewBox="0 0 64 64"><use href="#broto"></use></svg></span>
+            <h3>Movimento</h3>
+            <p>Qualquer atividade conta: caminhar, subir escada, dançar, carregar compras. O corpo humano foi feito para se mover todo dia, não três vezes por semana.</p>
+            <a href="#exercicios" class="pilar__link">Ver exercícios →</a>
+          </article>
+
+          <article class="pilar revelar">
+            <span class="pilar__icone"><svg viewBox="0 0 100 60" class="icone-folha"><use href="#folha"></use></svg></span>
+            <h3>Alimentação</h3>
+            <p>Comida de verdade na maior parte do tempo. Menos embalagem, mais panela. Um prato bem montado resolve mais do que qualquer suplemento.</p>
+            <a href="#alimentacao" class="pilar__link">Montar o prato →</a>
+          </article>
+
+          <article class="pilar revelar">
+            <span class="pilar__icone"><svg viewBox="0 0 40 52" class="icone-gota"><use href="#gota"></use></svg></span>
+            <h3>Hidratação</h3>
+            <p>Água é o nutriente que mais falta e o mais barato de corrigir. Sede, urina escura e dor de cabeça no fim do dia costumam ser o mesmo aviso.</p>
+            <a href="#ferramentas" class="pilar__link">Calcular meta →</a>
+          </article>
+
+          <article class="pilar revelar">
+            <span class="pilar__icone"><svg viewBox="0 0 64 64"><use href="#broto"></use></svg></span>
+            <h3>Sono</h3>
+            <p>É dormindo que o músculo se recupera, a memória se organiza e o apetite se regula. Dormir pouco sabota tudo o que você faz acordado.</p>
+            <a href="#dicas" class="pilar__link">Ler as dicas →</a>
+          </article>
+
+          <article class="pilar revelar">
+            <span class="pilar__icone"><svg viewBox="0 0 100 60" class="icone-folha"><use href="#folha"></use></svg></span>
+            <h3>Saúde mental</h3>
+            <p>Estresse crônico muda a forma como você come, dorme e se movimenta. Pausas, convívio e ajuda profissional fazem parte do cuidado com o corpo.</p>
+            <a href="#dicas" class="pilar__link">Ler as dicas →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== EXERCÍCIOS ====================== -->
+    <section class="secao secao--salvia" id="exercicios">
+      <div class="container">
+        <header class="secao__cabecalho revelar">
+          <p class="olho"><span class="marcador"></span>02 — Movimento</p>
+          <h2 class="secao__titulo">Exercícios para o lugar que você tem hoje</h2>
+          <p class="secao__intro">
+            Filtre por onde você vai treinar. Se está parado há muito tempo, comece com
+            metade do volume indicado — progredir devagar é exatamente o que faz o hábito durar.
+          </p>
+        </header>
+
+        <div class="filtros revelar" role="group" aria-label="Filtrar exercícios">
+          <button class="filtro filtro--ativo" data-filtro="todos">Todos</button>
+          <button class="filtro" data-filtro="casa">Em casa</button>
+          <button class="filtro" data-filtro="livre">Ar livre</button>
+          <button class="filtro" data-filtro="academia">Academia</button>
+        </div>
+
+        <ul class="cartoes" id="listaExercicios">
+
+          <li class="cartao revelar" data-categoria="livre">
+            <p class="cartao__tag">Ar livre</p>
+            <h3 class="cartao__titulo">Caminhada acelerada</h3>
+            <p class="cartao__dado">30 min</p>
+            <p class="cartao__texto">O melhor ponto de partida que existe. Ritmo em que dá para conversar, mas não para cantar.</p>
+            <div class="barra" aria-hidden="true"><span style="width:40%"></span></div>
+            <p class="cartao__meta">Intensidade leve · 5 ×/semana</p>
+          </li>
+
+          <li class="cartao revelar" data-categoria="casa">
+            <p class="cartao__tag">Em casa</p>
+            <h3 class="cartao__titulo">Agachamento livre</h3>
+            <p class="cartao__dado">3 × 12</p>
+            <p class="cartao__texto">Pés na largura do quadril, desça como se fosse sentar numa cadeira, joelhos apontando para fora.</p>
+            <div class="barra" aria-hidden="true"><span style="width:60%"></span></div>
+            <p class="cartao__meta">Força · 60 s de descanso</p>
+          </li>
+
+          <li class="cartao revelar" data-categoria="casa">
+            <p class="cartao__tag">Em casa</p>
+            <h3 class="cartao__titulo">Prancha isométrica</h3>
+            <p class="cartao__dado">3 × 30s</p>
+            <p class="cartao__texto">Cotovelos abaixo dos ombros, quadril na linha do corpo. Se a lombar arquear, apoie os joelhos.</p>
+            <div class="barra" aria-hidden="true"><span style="width:55%"></span></div>
+            <p class="cartao__meta">Estabilidade · sem equipamento</p>
+          </li>
+
+          <li class="cartao revelar" data-categoria="livre">
+            <p class="cartao__tag">Ar livre</p>
+            <h3 class="cartao__titulo">Corrida leve</h3>
+            <p class="cartao__dado">20 min</p>
+            <p class="cartao__texto">Nas primeiras semanas alterne 2 minutos correndo e 1 caminhando. Tênis com amortecimento ajuda bastante.</p>
+            <div class="barra" aria-hidden="true"><span style="width:75%"></span></div>
+            <p class="cartao__meta">Cardio · 3 ×/semana</p>
+          </li>
+
+          <li class="cartao revelar" data-categoria="casa">
+            <p class="cartao__tag">Em casa</p>
+            <h3 class="cartao__titulo">Flexão de braço</h3>
+            <p class="cartao__dado">3 × 8</p>
+            <p class="cartao__texto">Comece com as mãos apoiadas numa mesa firme e vá baixando a altura conforme ficar mais fácil.</p>
+            <div class="barra" aria-hidden="true"><span style="width:70%"></span></div>
+            <p class="cartao__meta">Força · peitoral e tríceps</p>
+          </li>
+
+          <li class="cartao revelar" data-categoria="academia">
+            <p class="cartao__tag">Academia</p>
+            <h3 class="cartao__titulo">Remada com halteres</h3>
+            <p class="cartao__dado">3 × 10</p>
+            <p class="cartao__texto">Equilibra a postura de quem passa o dia curvado sobre teclado e celular. Puxe com as costas, não com o braço.</p>
+            <div class="barra" aria-hidden="true"><span style="width:65%"></span></div>
+            <p class="cartao__meta">Força · costas</p>
+          </li>
+
+          <li class="cartao revelar" data-categoria="livre">
+            <p class="cartao__tag">Ar livre</p>
+            <h3 class="cartao__titulo">Pedalada</h3>
+            <p class="cartao__dado">40 min</p>
+            <p class="cartao__texto">Baixo impacto nas articulações e ainda substitui um deslocamento do dia. Ajuste o selim na altura do quadril.</p>
+            <div class="barra" aria-hidden="true"><span style="width:60%"></span></div>
+            <p class="cartao__meta">Cardio · 2 ×/semana</p>
+          </li>
+
+          <li class="cartao revelar" data-categoria="academia">
+            <p class="cartao__tag">Academia</p>
+            <h3 class="cartao__titulo">Leg press</h3>
+            <p class="cartao__dado">3 × 10</p>
+            <p class="cartao__texto">Carga controlada para pernas, útil para quem tem limitação de equilíbrio. Não estenda o joelho até travar.</p>
+            <div class="barra" aria-hidden="true"><span style="width:80%"></span></div>
+            <p class="cartao__meta">Força · progressão de carga</p>
+          </li>
+
+          <li class="cartao revelar" data-categoria="casa">
+            <p class="cartao__tag">Em casa</p>
+            <h3 class="cartao__titulo">Alongamento guiado</h3>
+            <p class="cartao__dado">10 min</p>
+            <p class="cartao__texto">Feche o dia soltando pescoço, lombar e posterior da coxa. Segure 30 segundos por posição, sem balançar.</p>
+            <div class="barra" aria-hidden="true"><span style="width:25%"></span></div>
+            <p class="cartao__meta">Mobilidade · diário</p>
+          </li>
+
+        </ul>
+
+        <!-- ---- PLANO SEMANAL COM ABAS ---- -->
+        <div class="plano revelar" id="plano">
+          <h3 class="plano__titulo">Plano semanal pronto</h3>
+          <p class="plano__texto">Escolha o nível mais próximo da sua realidade atual. Nada aqui é obrigatório — adapte aos seus dias.</p>
+
+          <div class="abas" role="tablist" aria-label="Níveis do plano semanal">
+            <button class="aba aba--ativa" role="tab" aria-selected="true" data-aba="iniciante">Iniciante</button>
+            <button class="aba" role="tab" aria-selected="false" data-aba="intermediario">Intermediário</button>
+            <button class="aba" role="tab" aria-selected="false" data-aba="avancado">Avançado</button>
+          </div>
+
+          <div class="painel painel--ativo" data-painel="iniciante">
+            <table class="tabela">
+              <thead><tr><th scope="col">Dia</th><th scope="col">Atividade</th><th scope="col">Duração</th></tr></thead>
+              <tbody>
+                <tr><td>Segunda</td><td>Caminhada leve</td><td>20 min</td></tr>
+                <tr><td>Terça</td><td>Alongamento e mobilidade</td><td>10 min</td></tr>
+                <tr><td>Quarta</td><td>Caminhada leve</td><td>20 min</td></tr>
+                <tr><td>Quinta</td><td>Descanso ativo: tarefas de casa, escada</td><td>—</td></tr>
+                <tr><td>Sexta</td><td>Caminhada + agachamento 2 × 10</td><td>25 min</td></tr>
+                <tr><td>Sábado</td><td>Atividade que você goste: dançar, pedalar, jogar</td><td>30 min</td></tr>
+                <tr><td>Domingo</td><td>Descanso</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="painel" data-painel="intermediario" hidden>
+            <table class="tabela">
+              <thead><tr><th scope="col">Dia</th><th scope="col">Atividade</th><th scope="col">Duração</th></tr></thead>
+              <tbody>
+                <tr><td>Segunda</td><td>Força: pernas e core</td><td>40 min</td></tr>
+                <tr><td>Terça</td><td>Caminhada acelerada ou corrida leve</td><td>30 min</td></tr>
+                <tr><td>Quarta</td><td>Força: membros superiores</td><td>40 min</td></tr>
+                <tr><td>Quinta</td><td>Mobilidade e alongamento</td><td>20 min</td></tr>
+                <tr><td>Sexta</td><td>Força: corpo inteiro</td><td>45 min</td></tr>
+                <tr><td>Sábado</td><td>Cardio ao ar livre</td><td>45 min</td></tr>
+                <tr><td>Domingo</td><td>Descanso</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="painel" data-painel="avancado" hidden>
+            <table class="tabela">
+              <thead><tr><th scope="col">Dia</th><th scope="col">Atividade</th><th scope="col">Duração</th></tr></thead>
+              <tbody>
+                <tr><td>Segunda</td><td>Força: inferiores com carga progressiva</td><td>60 min</td></tr>
+                <tr><td>Terça</td><td>Corrida em ritmo constante</td><td>45 min</td></tr>
+                <tr><td>Quarta</td><td>Força: membros superiores</td><td>60 min</td></tr>
+                <tr><td>Quinta</td><td>Treino intervalado + mobilidade</td><td>40 min</td></tr>
+                <tr><td>Sexta</td><td>Força: corpo inteiro</td><td>60 min</td></tr>
+                <tr><td>Sábado</td><td>Cardio longo de baixa intensidade</td><td>70 min</td></tr>
+                <tr><td>Domingo</td><td>Descanso completo</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p class="aviso revelar">
+          Se você tem alguma condição de saúde, está grávida ou sente dor ao se exercitar,
+          converse com um profissional de educação física ou com seu médico antes de começar.
+        </p>
+      </div>
+    </section>
+
+    <!-- ====================== ALIMENTAÇÃO ====================== -->
+    <section class="secao secao--escura" id="alimentacao">
+      <div class="container">
+        <header class="secao__cabecalho revelar">
+          <p class="olho"><span class="marcador"></span>03 — Alimentação</p>
+          <h2 class="secao__titulo">Quatro princípios que resolvem a maior parte</h2>
+          <p class="secao__intro">
+            O Guia Alimentar para a População Brasileira não manda contar caloria. Ele
+            ensina a escolher melhor a origem do que vai no prato — mais simples de seguir
+            e possível de manter a vida inteira.
+          </p>
+        </header>
+
+        <div class="principios">
+          <article class="principio revelar">
+            <span class="principio__numero">01</span>
+            <h3>Comida de verdade como base</h3>
+            <p>Arroz, feijão, frutas, legumes, verduras, ovos, carnes, leite, raízes. Alimentos in natura ou minimamente processados devem ocupar a maior parte do dia.</p>
+          </article>
+          <article class="principio revelar">
+            <span class="principio__numero">02</span>
+            <h3>Óleo, sal e açúcar em pouca quantidade</h3>
+            <p>O papel deles é temperar e cozinhar. O problema nunca foi usar — foi virarem o ingrediente principal da refeição.</p>
+          </article>
+          <article class="principio revelar">
+            <span class="principio__numero">03</span>
+            <h3>Ultraprocessados só de vez em quando</h3>
+            <p>Refrigerante, salgadinho, macarrão instantâneo e biscoito recheado são formulados para dar vontade de comer mais. Fora da rotina, não fora da vida.</p>
+          </article>
+          <article class="principio revelar">
+            <span class="principio__numero">04</span>
+            <h3>Coma com atenção e companhia</h3>
+            <p>Sentar à mesa, sem tela, comendo devagar, ajuda o corpo a perceber a saciedade — e transforma a refeição em descanso, não em tarefa.</p>
+          </article>
+        </div>
+
+        <div class="prato revelar">
+          <div class="prato__desenho" aria-hidden="true">
+            <div class="prato__fatia prato__fatia--vegetais"><span>50%</span></div>
+            <div class="prato__coluna">
+              <div class="prato__fatia prato__fatia--energia"><span>25%</span></div>
+              <div class="prato__fatia prato__fatia--proteina"><span>25%</span></div>
+            </div>
+          </div>
+          <div class="prato__legenda">
+            <h3>Como montar o prato sem pesar nada</h3>
+            <ul>
+              <li><span class="ponto ponto--vegetais"></span><strong>Metade:</strong> legumes, verduras e uma fruta de sobremesa.</li>
+              <li><span class="ponto ponto--energia"></span><strong>Um quarto:</strong> arroz, macarrão, batata, mandioca ou milho.</li>
+              <li><span class="ponto ponto--proteina"></span><strong>Um quarto:</strong> feijão, ovo, carne, frango ou peixe.</li>
+            </ul>
+            <p class="prato__agua">Para beber: água. Guarde suco e refrigerante para ocasiões específicas.</p>
+          </div>
+        </div>
+
+        <h3 class="sub-titulo revelar">O que cada grupo faz no corpo</h3>
+        <div class="grupos">
+          <article class="grupo grupo--verde revelar">
+            <h4>Verduras e legumes</h4>
+            <p>Fibras, vitaminas e minerais com pouca energia. Dão volume à refeição e ajudam o intestino a funcionar.</p>
+            <p class="grupo__exemplos">Couve · abóbora · tomate · cenoura · quiabo</p>
+          </article>
+          <article class="grupo grupo--laranja revelar">
+            <h4>Frutas</h4>
+            <p>Açúcar natural acompanhado de fibra e água — bem diferente do açúcar isolado do doce industrializado.</p>
+            <p class="grupo__exemplos">Banana · manga · laranja · goiaba · melancia</p>
+          </article>
+          <article class="grupo grupo--marrom revelar">
+            <h4>Cereais e raízes</h4>
+            <p>A principal fonte de energia do dia. As versões integrais mantêm a fibra e prolongam a saciedade.</p>
+            <p class="grupo__exemplos">Arroz · milho · mandioca · batata · aveia</p>
+          </article>
+          <article class="grupo grupo--vinho revelar">
+            <h4>Proteínas</h4>
+            <p>Constroem e reparam músculo, pele e defesas. Feijão com arroz já forma uma proteína completa.</p>
+            <p class="grupo__exemplos">Feijão · ovo · frango · peixe · lentilha</p>
+          </article>
+          <article class="grupo grupo--creme revelar">
+            <h4>Leites e derivados</h4>
+            <p>Cálcio e proteína. Quem não consome bem pode substituir por outras fontes, com orientação profissional.</p>
+            <p class="grupo__exemplos">Leite · iogurte natural · queijo branco</p>
+          </article>
+          <article class="grupo grupo--oliva revelar">
+            <h4>Gorduras boas</h4>
+            <p>Ajudam a absorver vitaminas e a saciar. Prefira as de origem vegetal e evite reaproveitar óleo de fritura.</p>
+            <p class="grupo__exemplos">Azeite · castanhas · abacate · sementes</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== RECEITAS ====================== -->
+    <section class="secao" id="receitas">
+      <div class="container">
+        <header class="secao__cabecalho revelar">
+          <p class="olho"><span class="marcador"></span>04 — Cozinha</p>
+          <h2 class="secao__titulo">Quatro receitas baratas e rápidas</h2>
+          <p class="secao__intro">
+            Cozinhar é a habilidade que mais protege a alimentação de alguém. Estas quatro
+            usam ingredientes comuns, cabem em menos de 30 minutos e rendem marmita.
+            Clique para ver o modo de preparo.
+          </p>
+        </header>
+
+        <div class="receitas">
+
+          <article class="receita revelar">
+            <div class="receita__topo receita__topo--a"><svg viewBox="0 0 100 60" class="icone-folha"><use href="#folha"></use></svg></div>
+            <div class="receita__corpo">
+              <p class="cartao__tag">Almoço · 25 min</p>
+              <h3>Escondidinho de mandioca com frango</h3>
+              <p>Purê de mandioca por cima, frango desfiado por baixo. Rende bem e congela sem perder a textura.</p>
+              <button class="botao botao--pequeno" data-abrir="1">Ver receita</button>
+            </div>
+          </article>
+
+          <article class="receita revelar">
+            <div class="receita__topo receita__topo--b"><svg viewBox="0 0 100 60" class="icone-folha"><use href="#folha"></use></svg></div>
+            <div class="receita__corpo">
+              <p class="cartao__tag">Café da manhã · 10 min</p>
+              <h3>Panqueca de banana e aveia</h3>
+              <p>Três ingredientes, sem açúcar adicionado. Boa para treinar pela manhã sem peso no estômago.</p>
+              <button class="botao botao--pequeno" data-abrir="2">Ver receita</button>
+            </div>
+          </article>
+
+          <article class="receita revelar">
+            <div class="receita__topo receita__topo--c"><svg viewBox="0 0 100 60" class="icone-folha"><use href="#folha"></use></svg></div>
+            <div class="receita__corpo">
+              <p class="cartao__tag">Jantar · 20 min</p>
+              <h3>Sopa de legumes com feijão</h3>
+              <p>Aproveita os legumes que estão perto de estragar e vira refeição completa com o caldo do feijão.</p>
+              <button class="botao botao--pequeno" data-abrir="3">Ver receita</button>
+            </div>
+          </article>
+
+          <article class="receita revelar">
+            <div class="receita__topo receita__topo--d"><svg viewBox="0 0 100 60" class="icone-folha"><use href="#folha"></use></svg></div>
+            <div class="receita__corpo">
+              <p class="cartao__tag">Lanche · 5 min</p>
+              <h3>Vitamina verde de abacate</h3>
+              <p>Saciedade de gordura boa com fruta e folha. Alternativa ao pacote de biscoito da tarde.</p>
+              <button class="botao botao--pequeno" data-abrir="4">Ver receita</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Conteúdo das receitas: fica oculto e é clonado para o modal pelo JavaScript -->
+    <div class="modelos" hidden>
+      <div id="receita-1">
+        <h3>Escondidinho de mandioca com frango</h3>
+        <p class="modal__meta">Almoço · 25 min · 4 porções</p>
+        <h4>Ingredientes</h4>
+        <ul>
+          <li>1 kg de mandioca descascada</li>
+          <li>2 filés de frango cozidos e desfiados</li>
+          <li>1 cebola e 2 dentes de alho</li>
+          <li>1 tomate picado</li>
+          <li>1 xícara do caldo do cozimento</li>
+          <li>Sal, pimenta-do-reino e cheiro-verde</li>
+        </ul>
+        <h4>Modo de preparo</h4>
+        <ol>
+          <li>Cozinhe a mandioca até ficar bem macia e amasse ainda quente com um pouco do caldo, até virar purê.</li>
+          <li>Refogue a cebola e o alho, junte o tomate e o frango desfiado, tempere e cozinhe por 5 minutos.</li>
+          <li>Espalhe o frango num refratário, cubra com o purê e alise a superfície.</li>
+          <li>Leve ao forno médio por 15 minutos, até dourar levemente. Finalize com cheiro-verde.</li>
+        </ol>
+        <p class="modal__dica">Dica: sirva com salada crua para completar a metade de vegetais do prato.</p>
+      </div>
+
+      <div id="receita-2">
+        <h3>Panqueca de banana e aveia</h3>
+        <p class="modal__meta">Café da manhã · 10 min · 1 porção</p>
+        <h4>Ingredientes</h4>
+        <ul>
+          <li>1 banana bem madura</li>
+          <li>1 ovo</li>
+          <li>3 colheres de sopa de aveia em flocos</li>
+          <li>Canela a gosto</li>
+        </ul>
+        <h4>Modo de preparo</h4>
+        <ol>
+          <li>Amasse a banana com um garfo até virar purê.</li>
+          <li>Misture o ovo, a aveia e a canela até formar uma massa homogênea.</li>
+          <li>Aqueça uma frigideira antiaderente em fogo baixo e despeje a massa em porções pequenas.</li>
+          <li>Vire quando as bordas soltarem, cerca de 2 minutos de cada lado.</li>
+        </ol>
+        <p class="modal__dica">Dica: a banana madura já adoça o suficiente — não precisa de açúcar.</p>
+      </div>
+
+      <div id="receita-3">
+        <h3>Sopa de legumes com feijão</h3>
+        <p class="modal__meta">Jantar · 20 min · 4 porções</p>
+        <h4>Ingredientes</h4>
+        <ul>
+          <li>1 concha de feijão cozido com caldo</li>
+          <li>1 cenoura, 1 batata e 1 abobrinha em cubos</li>
+          <li>1 cebola e 2 dentes de alho</li>
+          <li>1 litro de água</li>
+          <li>Folhas de couve picadas finas</li>
+          <li>Sal, louro e azeite</li>
+        </ul>
+        <h4>Modo de preparo</h4>
+        <ol>
+          <li>Refogue a cebola e o alho no azeite até dourarem.</li>
+          <li>Acrescente os legumes em cubos, o louro e a água. Cozinhe por 12 minutos.</li>
+          <li>Junte o feijão com o caldo e deixe apurar por mais 5 minutos.</li>
+          <li>Desligue o fogo, misture a couve picada e tampe por 2 minutos antes de servir.</li>
+        </ol>
+        <p class="modal__dica">Dica: qualquer legume perto de estragar funciona aqui. É a receita que combate o desperdício.</p>
+      </div>
+
+      <div id="receita-4">
+        <h3>Vitamina verde de abacate</h3>
+        <p class="modal__meta">Lanche · 5 min · 1 porção</p>
+        <h4>Ingredientes</h4>
+        <ul>
+          <li>Meio abacate pequeno</li>
+          <li>1 copo de leite ou bebida vegetal</li>
+          <li>1 punhado de couve ou espinafre</li>
+          <li>Suco de meio limão</li>
+          <li>Gelo a gosto</li>
+        </ul>
+        <h4>Modo de preparo</h4>
+        <ol>
+          <li>Lave bem as folhas e retire os talos mais grossos.</li>
+          <li>Bata tudo no liquidificador por 1 minuto, até ficar homogêneo.</li>
+          <li>Prove e ajuste o limão. Beba na hora, para não oxidar.</li>
+        </ol>
+        <p class="modal__dica">Dica: o limão equilibra o amargo da folha e ainda ajuda na absorção do ferro.</p>
+      </div>
+    </div>
+
+    <!-- ====================== PADRÕES ALIMENTARES ====================== -->
+    <section class="secao secao--salvia" id="dietas">
+      <div class="container">
+        <header class="secao__cabecalho revelar">
+          <p class="olho"><span class="marcador"></span>05 — Padrões alimentares</p>
+          <h2 class="secao__titulo">Dietas que se sustentam no longo prazo</h2>
+          <p class="secao__intro">
+            Padrão alimentar é diferente de dieta restritiva de 30 dias. Os modelos abaixo
+            são estudados há décadas e têm algo em comum: nenhum proíbe grupos inteiros de
+            alimentos sem motivo clínico.
+          </p>
+        </header>
+
+        <div class="cartoes cartoes--dietas">
+          <article class="cartao cartao--dieta revelar">
+            <p class="cartao__tag">Mediterrânea</p>
+            <h3 class="cartao__titulo">Azeite, peixe e vegetais</h3>
+            <p class="cartao__texto">Muitos vegetais, leguminosas, castanhas, azeite como gordura principal e peixe algumas vezes por semana. É o padrão com mais evidência de proteção cardiovascular.</p>
+            <p class="cartao__meta">Bom para: coração e longevidade</p>
+          </article>
+          <article class="cartao cartao--dieta revelar">
+            <p class="cartao__tag">DASH</p>
+            <h3 class="cartao__titulo">Foco em reduzir o sódio</h3>
+            <p class="cartao__texto">Criada para ajudar no controle da pressão arterial. Reforça frutas, verduras e laticínios magros enquanto diminui sal e ultraprocessados.</p>
+            <p class="cartao__meta">Bom para: pressão alta</p>
+          </article>
+          <article class="cartao cartao--dieta revelar">
+            <p class="cartao__tag">Baseada em plantas</p>
+            <h3 class="cartao__titulo">Leguminosas no centro</h3>
+            <p class="cartao__texto">Feijões, grão-de-bico, lentilha, grãos integrais e sementes ocupam o lugar principal. Exige atenção à vitamina B12 e ao ferro, com acompanhamento.</p>
+            <p class="cartao__meta">Bom para: digestão e custo</p>
+          </article>
+          <article class="cartao cartao--dieta revelar">
+            <p class="cartao__tag">Guia Alimentar</p>
+            <h3 class="cartao__titulo">O padrão brasileiro</h3>
+            <p class="cartao__texto">Arroz com feijão, salada e uma proteína. Barato, culturalmente nosso e nutricionalmente completo — o padrão mais fácil de manter no Brasil.</p>
+            <p class="cartao__meta">Bom para: rotina real</p>
+          </article>
+        </div>
+
+        <p class="aviso revelar">
+          Nenhum padrão alimentar serve para todo mundo. Alergias, condições de saúde,
+          orçamento e cultura mudam tudo. Um nutricionista adapta o modelo à sua vida — e
+          essa adaptação é justamente o que faz diferença.
+        </p>
+      </div>
+    </section>
+
+    <!-- ====================== HÁBITOS ====================== -->
+    <section class="secao" id="habitos">
+      <div class="container container--medio">
+        <header class="secao__cabecalho revelar">
+          <p class="olho"><span class="marcador"></span>06 — Rotina</p>
+          <h2 class="secao__titulo">Checklist do dia</h2>
+          <p class="secao__intro">
+            Marque o que você já fez hoje. Não é para zerar a lista todo dia — é para
+            enxergar onde está o buraco da sua rotina.
+          </p>
+        </header>
+
+        <div class="habitos revelar">
+          <ul class="habitos__lista" id="listaHabitos">
+            <li><label><input type="checkbox"><span>Bebi água ao longo do dia</span></label></li>
+            <li><label><input type="checkbox"><span>Me movimentei por pelo menos 20 minutos</span></label></li>
+            <li><label><input type="checkbox"><span>Comi fruta, verdura ou legume em duas refeições</span></label></li>
+            <li><label><input type="checkbox"><span>Fiz uma refeição sentado e sem tela</span></label></li>
+            <li><label><input type="checkbox"><span>Não consumi refrigerante hoje</span></label></li>
+            <li><label><input type="checkbox"><span>Levantei da cadeira a cada hora</span></label></li>
+            <li><label><input type="checkbox"><span>Dormi pelo menos 7 horas na noite passada</span></label></li>
+            <li><label><input type="checkbox"><span>Tive uma pausa de descanso mental</span></label></li>
+          </ul>
+
+          <div class="habitos__resultado">
+            <div class="anel" id="anel" style="--porcentagem:0"><span id="anelTexto">0%</span></div>
+            <p class="habitos__mensagem" id="mensagemHabitos">Marque os hábitos que você já cumpriu hoje.</p>
+            <button class="botao botao--vazado botao--pequeno" id="limparHabitos">Limpar tudo</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== FERRAMENTAS ====================== -->
+    <section class="secao secao--escura" id="ferramentas">
+      <div class="container">
+        <header class="secao__cabecalho revelar">
+          <p class="olho"><span class="marcador"></span>07 — Ferramentas</p>
+          <h2 class="secao__titulo">Três calculadoras simples</h2>
+          <p class="secao__intro">
+            São indicadores gerais de referência, úteis para dar um ponto de partida.
+            Nenhum deles é diagnóstico e nenhum substitui avaliação profissional.
+          </p>
+        </header>
+
+        <div class="ferramentas">
+
+          <div class="ferramenta revelar">
+            <h3 class="ferramenta__titulo">Índice de Massa Corporal</h3>
+            <p class="ferramenta__texto">Relação entre peso e altura usada como triagem populacional.</p>
+            <form id="formIMC" novalidate>
+              <div class="campo">
+                <label for="peso">Peso (kg)</label>
+                <input type="number" id="peso" step="0.1" min="20" max="400" placeholder="70" inputmode="decimal">
+              </div>
+              <div class="campo">
+                <label for="altura">Altura (cm)</label>
+                <input type="number" id="altura" step="1" min="100" max="250" placeholder="175" inputmode="numeric">
+              </div>
+              <button type="submit" class="botao botao--solido botao--pequeno">Calcular</button>
+              <p class="erro" id="erroIMC" role="alert"></p>
+              <output class="saida" id="saidaIMC" hidden>
+                <p class="saida__valor" id="valorIMC">—</p>
+                <p class="saida__faixa" id="faixaIMC">—</p>
+                <p class="saida__nota">O IMC não distingue músculo de gordura, nem considera idade e nível de atividade.</p>
+              </output>
+            </form>
+          </div>
+
+          <div class="ferramenta revelar">
+            <h3 class="ferramenta__titulo">Meta de hidratação</h3>
+            <p class="ferramenta__texto">Estimativa a partir de 35 ml de água por quilo de peso corporal.</p>
+            <form id="formAgua" novalidate>
+              <div class="campo">
+                <label for="pesoAgua">Peso (kg)</label>
+                <input type="number" id="pesoAgua" step="0.1" min="20" max="400" placeholder="70" inputmode="decimal">
+              </div>
+              <div class="campo">
+                <label for="clima">Rotina do dia</label>
+                <select id="clima">
+                  <option value="1">Dia comum</option>
+                  <option value="1.15">Calor forte</option>
+                  <option value="1.25">Treino intenso</option>
+                </select>
+              </div>
+              <button type="submit" class="botao botao--solido botao--pequeno">Calcular</button>
+              <p class="erro" id="erroAgua" role="alert"></p>
+              <output class="saida" id="saidaAgua" hidden>
+                <p class="saida__valor" id="valorAgua">—</p>
+                <p class="saida__faixa" id="coposAgua">—</p>
+                <p class="saida__nota">É só uma referência: sede e cor clara da urina continuam sendo os melhores sinais.</p>
+              </output>
+            </form>
+          </div>
+
+          <div class="ferramenta revelar">
+            <h3 class="ferramenta__titulo">Distância caminhada</h3>
+            <p class="ferramenta__texto">Converte os passos do seu dia em quilômetros e tempo estimado.</p>
+            <form id="formPassos" novalidate>
+              <div class="campo">
+                <label for="passos">Passos do dia</label>
+                <input type="number" id="passos" step="100" min="0" max="100000" placeholder="6000" inputmode="numeric">
+              </div>
+              <div class="campo">
+                <label for="alturaPassos">Altura (cm)</label>
+                <input type="number" id="alturaPassos" step="1" min="100" max="250" placeholder="175" inputmode="numeric">
+              </div>
+              <button type="submit" class="botao botao--solido botao--pequeno">Calcular</button>
+              <p class="erro" id="erroPassos" role="alert"></p>
+              <output class="saida" id="saidaPassos" hidden>
+                <p class="saida__valor" id="valorPassos">—</p>
+                <p class="saida__faixa" id="tempoPassos">—</p>
+                <p class="saida__nota">O comprimento do passo é estimado em 41% da altura, uma média usual.</p>
+              </output>
+            </form>
+          </div>
+
+        </div>
+
+        <table class="tabela tabela--imc revelar">
+          <caption>Faixas de referência de IMC da Organização Mundial da Saúde</caption>
+          <thead><tr><th scope="col">IMC</th><th scope="col">Classificação</th></tr></thead>
+          <tbody>
+            <tr><td>abaixo de 18,5</td><td>Abaixo do peso</td></tr>
+            <tr><td>18,5 a 24,9</td><td>Peso adequado</td></tr>
+            <tr><td>25,0 a 29,9</td><td>Sobrepeso</td></tr>
+            <tr><td>30,0 ou mais</td><td>Obesidade</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ====================== QUIZ DE MITOS ====================== -->
+    <section class="secao" id="mitos">
+      <div class="container container--medio">
+        <header class="secao__cabecalho revelar">
+          <p class="olho"><span class="marcador"></span>08 — Quiz</p>
+          <h2 class="secao__titulo">Mito ou verdade?</h2>
+          <p class="secao__intro">
+            Cinco afirmações que circulam bastante por aí. Responda e veja a explicação de
+            cada uma.
+          </p>
+        </header>
+
+        <div class="quiz revelar" id="quiz">
+          <p class="quiz__contagem">Pergunta <span id="quizIndice">1</span> de <span id="quizTotal">5</span></p>
+          <p class="quiz__pergunta" id="quizPergunta">Carregando…</p>
+
+          <div class="quiz__acoes" id="quizAcoes">
+            <button class="botao botao--vazado" data-resposta="mito">Mito</button>
+            <button class="botao botao--vazado" data-resposta="verdade">Verdade</button>
+          </div>
+
+          <div class="quiz__feedback" id="quizFeedback" hidden>
+            <p class="quiz__veredito" id="quizVeredito"></p>
+            <p class="quiz__explicacao" id="quizExplicacao"></p>
+            <button class="botao botao--solido botao--pequeno" id="quizProxima">Próxima</button>
+          </div>
+
+          <div class="quiz__final" id="quizFinal" hidden>
+            <p class="quiz__placar" id="quizPlacar"></p>
+            <button class="botao botao--vazado botao--pequeno" id="quizReiniciar">Jogar de novo</button>
+          </div>
+
+          <div class="quiz__barra" aria-hidden="true"><span id="quizProgresso"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== DICAS / FAQ ====================== -->
+    <section class="secao secao--salvia" id="dicas">
+      <div class="container container--medio">
+        <header class="secao__cabecalho revelar">
+          <p class="olho"><span class="marcador"></span>09 — Dúvidas frequentes</p>
+          <h2 class="secao__titulo">As perguntas que todo mundo faz</h2>
+        </header>
+
+        <div class="acordeao" id="acordeao">
+          <div class="acordeao__item">
+            <button class="acordeao__botao" aria-expanded="false"><span>Estou parado há anos. Por onde eu começo?</span><span class="acordeao__sinal" aria-hidden="true"></span></button>
+            <div class="acordeao__conteudo"><p>Pela menor coisa que você consegue repetir. Dez minutos de caminhada por dia, cinco dias por semana, valem mais do que um treino de uma hora feito uma vez e abandonado. Aumente cerca de 10% por semana e só depois pense em intensidade.</p></div>
+          </div>
+          <div class="acordeao__item">
+            <button class="acordeao__botao" aria-expanded="false"><span>Preciso tomar suplemento?</span><span class="acordeao__sinal" aria-hidden="true"></span></button>
+            <div class="acordeao__conteudo"><p>Na maioria dos casos, não. Suplemento existe para cobrir uma falta comprovada, geralmente identificada em exame ou em situações específicas, como dietas vegetarianas estritas. Comprar por indicação de vídeo na internet costuma ser dinheiro jogado fora.</p></div>
+          </div>
+          <div class="acordeao__item">
+            <button class="acordeao__botao" aria-expanded="false"><span>Quanta água eu devo beber por dia?</span><span class="acordeao__sinal" aria-hidden="true"></span></button>
+            <div class="acordeao__conteudo"><p>Não existe número mágico igual para todos. Uma referência prática é beber sempre que sentir sede e observar a cor da urina: bem clara indica boa hidratação. Calor, exercício e febre aumentam a necessidade.</p></div>
+          </div>
+          <div class="acordeao__item">
+            <button class="acordeao__botao" aria-expanded="false"><span>Como faço para dormir melhor?</span><span class="acordeao__sinal" aria-hidden="true"></span></button>
+            <div class="acordeao__conteudo"><p>Horário regular para deitar e levantar é o fator que mais pesa, inclusive no fim de semana. Também ajuda reduzir luz forte e telas na última hora, evitar café depois da tarde e deixar o quarto escuro e fresco. Se a dificuldade durar semanas, vale procurar um médico.</p></div>
+          </div>
+          <div class="acordeao__item">
+            <button class="acordeao__botao" aria-expanded="false"><span>Comida saudável é cara?</span><span class="acordeao__sinal" aria-hidden="true"></span></button>
+            <div class="acordeao__conteudo"><p>Comparado a ultraprocessado, arroz, feijão, ovo, banana e verdura da estação custam menos por refeição. O que encarece é comprar produto importado ou rotulado como fitness. Feira no fim do dia, alimentos da safra e planejamento das compras reduzem bastante o gasto.</p></div>
+          </div>
+          <div class="acordeao__item">
+            <button class="acordeao__botao" aria-expanded="false"><span>Como manter a constância quando a motivação acaba?</span><span class="acordeao__sinal" aria-hidden="true"></span></button>
+            <div class="acordeao__conteudo"><p>Trate como compromisso agendado, não como decisão diária. Marque no calendário, deixe a roupa separada na véspera, combine com alguém. E aceite a regra mais útil de todas: falhar um dia é normal, falhar dois seguidos é o que vira hábito.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== NEWSLETTER ====================== -->
+    <section class="secao secao--chamada" id="contato">
+      <div class="container container--medio">
+        <header class="secao__cabecalho revelar">
+          <p class="olho"><span class="marcador"></span>10 — Newsletter</p>
+          <h2 class="secao__titulo">Receba uma dose por semana</h2>
+          <p class="secao__intro">
+            Um e-mail às segundas com uma sugestão de treino, uma receita simples e um mito
+            desmontado. Sem propaganda de suplemento.
+          </p>
+        </header>
+
+        <form class="assinatura revelar" id="formAssinatura" novalidate>
+          <div class="campo"><label for="nome">Nome</label><input type="text" id="nome" placeholder="Como podemos te chamar"></div>
+          <div class="campo"><label for="email">E-mail</label><input type="email" id="email" placeholder="voce@exemplo.com"></div>
+          <div class="campo campo--largo">
+            <label for="interesse">Mais interesse em</label>
+            <select id="interesse">
+              <option>Exercícios</option>
+              <option>Alimentação</option>
+              <option>Receitas</option>
+              <option>Rotina e hábitos</option>
+            </select>
+          </div>
+          <div class="campo campo--largo">
+            <button type="submit" class="botao botao--solido">Assinar</button>
+            <p class="erro" id="erroAssinatura" role="alert"></p>
+            <p class="sucesso" id="sucessoAssinatura" role="status"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================== RODAPÉ ====================== -->
+  <footer class="rodape">
+    <div class="container rodape__grade">
+      <div>
+        <p class="rodape__marca">Raiz</p>
+        <p class="rodape__texto">Conteúdo educativo produzido como trabalho acadêmico. Não substitui consulta com médico, nutricionista ou profissional de educação física.</p>
+      </div>
+      <div>
+        <p class="rodape__titulo">Conteúdo</p>
+        <ul class="rodape__lista">
+          <li><a href="#exercicios">Exercícios</a></li>
+          <li><a href="#alimentacao">Alimentação</a></li>
+          <li><a href="#receitas">Receitas</a></li>
+          <li><a href="#dietas">Padrões alimentares</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="rodape__titulo">Interativo</p>
+        <ul class="rodape__lista">
+          <li><a href="#habitos">Checklist do dia</a></li>
+          <li><a href="#ferramentas">Calculadoras</a></li>
+          <li><a href="#mitos">Quiz de mitos</a></li>
+          <li><a href="#dicas">Dúvidas frequentes</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="rodape__titulo">Referências</p>
+        <ul class="rodape__lista">
+          <li>Guia Alimentar para a População Brasileira</li>
+          <li>Ministério da Saúde</li>
+          <li>Organização Mundial da Saúde</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container rodape__base">
+      <p>© <span id="ano">2026</span> Raiz — projeto acadêmico desenvolvido para o Instituto Federal.</p>
+      <a href="#inicio" class="rodape__topo">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+
+  <!-- ====================== MODAL DAS RECEITAS ====================== -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" hidden>
+    <div class="modal__fundo" data-fechar></div>
+    <div class="modal__caixa">
+      <button class="modal__fechar" id="modalFechar" aria-label="Fechar receita">×</button>
+      <div class="modal__conteudo" id="modalConteudo" tabindex="-1"></div>
+    </div>
+  </div>
+
+  <!-- Botão flutuante de voltar ao topo -->
+  <button class="topo" id="botaoTopo" aria-label="Voltar ao topo" hidden>↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
